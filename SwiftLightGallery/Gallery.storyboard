@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Gallery View Controller-->
+        <scene sceneID="dDF-W9-XGg">
+            <objects>
+                <viewController storyboardIdentifier="ImageGalleryViewController" id="v9I-it-aHg" customClass="ImageGalleryViewController" customModule="SwiftLightGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rIF-8b-Mi9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZZw-gd-Qtk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="izR-3e-c1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nR-w6-BrT">
+                                <connections>
+                                    <segue destination="lfC-eW-z1l" kind="embed" id="oSc-8f-Ybe"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtt-p4-sMH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qRI-K0-cCo"/>
+                                    <constraint firstAttribute="width" constant="40" id="s3P-3J-YOO"/>
+                                </constraints>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="dismissVC:" destination="v9I-it-aHg" eventType="touchUpInside" id="qEL-xb-l1h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jtt-p4-sMH" secondAttribute="trailing" constant="20" id="0CC-T0-bZ6"/>
+                            <constraint firstItem="7nR-w6-BrT" firstAttribute="top" secondItem="rIF-8b-Mi9" secondAttribute="bottom" id="CeS-tI-ez9"/>
+                            <constraint firstAttribute="trailing" secondItem="7nR-w6-BrT" secondAttribute="trailing" id="WNH-Wb-vQv"/>
+                            <constraint firstItem="Jtt-p4-sMH" firstAttribute="top" secondItem="rIF-8b-Mi9" secondAttribute="bottom" constant="20" id="eHC-YU-WOZ"/>
+                            <constraint firstItem="7nR-w6-BrT" firstAttribute="leading" secondItem="izR-3e-c1h" secondAttribute="leading" id="g7O-MZ-VUh"/>
+                            <constraint firstItem="ZZw-gd-Qtk" firstAttribute="top" secondItem="7nR-w6-BrT" secondAttribute="bottom" id="wOm-HO-su4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRC-LO-KB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="134"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="DZv-RL-cKt">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="lfC-eW-z1l" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Viw-7v-k1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="134"/>
+        </scene>
+        <!--Light Image View Controller-->
+        <scene sceneID="5K0-qP-GU5">
+            <objects>
+                <viewController storyboardIdentifier="LightImageViewController" id="pVj-Ff-US2" customClass="LightImageViewController" customModule="SwiftLightGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wrF-MU-TU6"/>
+                        <viewControllerLayoutGuide type="bottom" id="qK4-cY-tED"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggJ-tB-TGB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48q-pw-r7R">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arvind-square" translatesAutoresizingMaskIntoConstraints="NO" id="4hv-T9-eBk"/>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4hv-T9-eBk" secondAttribute="bottom" id="Z07-7f-4HN"/>
+                                    <constraint firstItem="4hv-T9-eBk" firstAttribute="centerY" secondItem="48q-pw-r7R" secondAttribute="centerY" id="dAG-el-OXg"/>
+                                    <constraint firstItem="4hv-T9-eBk" firstAttribute="centerX" secondItem="48q-pw-r7R" secondAttribute="centerX" id="dpN-DC-doN"/>
+                                    <constraint firstAttribute="trailing" secondItem="4hv-T9-eBk" secondAttribute="trailing" id="f25-j9-f2x"/>
+                                    <constraint firstItem="4hv-T9-eBk" firstAttribute="top" secondItem="48q-pw-r7R" secondAttribute="top" id="hyX-Fr-uNj"/>
+                                    <constraint firstItem="4hv-T9-eBk" firstAttribute="leading" secondItem="48q-pw-r7R" secondAttribute="leading" id="uhe-OB-pcc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="pVj-Ff-US2" id="qZh-zu-AsN"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="48q-pw-r7R" secondAttribute="trailing" id="6AJ-ay-BsD"/>
+                            <constraint firstItem="48q-pw-r7R" firstAttribute="leading" secondItem="ggJ-tB-TGB" secondAttribute="leading" id="Y7x-a1-fcv"/>
+                            <constraint firstItem="48q-pw-r7R" firstAttribute="top" secondItem="wrF-MU-TU6" secondAttribute="bottom" id="ZZ5-Iv-ftU"/>
+                            <constraint firstItem="qK4-cY-tED" firstAttribute="top" secondItem="48q-pw-r7R" secondAttribute="bottom" id="cym-YU-T9P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="4hv-T9-eBk" id="27U-ao-7ph"/>
+                        <outlet property="scrollView" destination="48q-pw-r7R" id="wBv-qE-jOY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yt3-4b-X34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="804"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arvind-square" width="663" height="664"/>
+    </resources>
+</document>
